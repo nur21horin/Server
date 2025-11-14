@@ -16,14 +16,14 @@ const port = process.env.PORT || 3000;
 
 
 const allowedOrigins = [
-  "http://localhost:3000", // your local frontend
-  "https://ephemeral-chebakia-89a6e4.netlify.app", // deployed frontend
+  "http://localhost:3000", 
+  "https://dazzling-babka-75b8f8.netlify.app",
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // allow requests with no origin (like Postman or server-to-server)
+     
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
         const msg =
@@ -32,7 +32,7 @@ app.use(
       }
       return callback(null, true);
     },
-    credentials: true, // if you need cookies/auth headers
+    credentials: true, 
   })
 );
 
